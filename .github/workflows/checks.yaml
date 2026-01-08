@@ -15,12 +15,12 @@ jobs:
       status: ${{ job.status }}
     steps:
     - name: Checkout code
-      uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
     - name : Run EC Validate (keyless)
       uses: ./
       with:
-        image: ghcr.io/conforma/golden-container:latest@sha256:62b398a7321f9f0de878bb8e66e461292c6686e5e10b9b7c034a218bde398f89 # latest
+        image: ghcr.io/conforma/golden-container:latest@sha256:35b9b901a0c5df4c53afd39f1424800928ab88c199fa159ee81b734dff02c531 # latest
         identity: https:\/\/github\.com\/(slsa-framework\/slsa-github-generator|conforma\/golden-container)\/
         issuer: https://token.actions.githubusercontent.com
 
@@ -49,7 +49,7 @@ jobs:
         GH_TOKEN: ${{ github.token }}
 
     - name: Create New Version Release
-      uses: softprops/action-gh-release@6cbd405e2c4e67a21c47fa9e383d020e4e28b836 # v2
+      uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
       with:
         name: ${{ env.newVersion }} Release
         body: ""
